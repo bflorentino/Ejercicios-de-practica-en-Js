@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*Crea una función que genere 100 números aleatorios entre 1 y 1000 que no se repitan y luego muestralos por pantalla
+de manera ordenada*/
+
+const valores = [];
+const valoresAleatorios = [];
+let aleatorio = 0;
+
+
+const rellenarArrayDeValores = function(){
+// Rellenar arreglo de valores del 1 al 1000    
+    for (let index = 1; index < 1000; index++) {
+        valores[index] = index;
+    }
+}
+
+const removerValorSeleccionado = function(){
+// Remueve el ultimo valor seleccionado del arreglo de valores, de manera que garantizamos que nunca se tomara un valor
+//repetido en proximas iteraciones
+    valores.splice(aleatorio, 1)
+}
+
+const seleccionarAleatorio = function(){
+// Selecciona un valor aleatorio del arreglo valores
+    aleatorio =  Math.floor(Math.random() * (valores.length - 0)) + 0;
+    return valores[aleatorio];
+}
+
+const rellenarArrayDeValoresAleatorios = function(){
+// Rellena otro array con 100 numeros aleatorios
+    for(let index = 0; index < 100; index++){
+
+        valoresAleatorios[index] = seleccionarAleatorio();
+        removerValorSeleccionado();
+    
+    }
+}
+
+const ordenarArrayAleatorios = function(){
+// Ordena el array resultante con los 100 valores aleatorios
+    valoresAleatorios.sort(function(a,b){
+        return a - b;
+    });
+}
+
+const imprimirArregloAleatorios = function(){
+    
+    for(const valor of valoresAleatorios){
+        console.log(valor);
+    }
+}
+
+rellenarArrayDeValores();
+rellenarArrayDeValoresAleatorios();
+ordenarArrayAleatorios();
+imprimirArregloAleatorios();
+
+    </script>
+</body>
+</html>
