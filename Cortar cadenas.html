@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+//  función que te devuelva el texto recortado según el número de caracteres indicados, 
+// pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+
+const recortarCadena = (cadena, cantidad) => {
+
+    if(typeof(cadena) == "string" && typeof(cantidad) == "number"){
+        return cadena.slice(0, cantidad);
+    }else{
+        return undefined;
+    }
+} 
+
+let cadena = prompt("Ingrese una cadena de texto");
+
+let cantidadACortar = parseInt(prompt("Ingrese la cantidad de valores a recortar"));
+
+if(typeof(cantidadACortar) != "NaN"){   
+    
+    alert(`La subcadena pedida es ${recortarCadena(cadena, cantidadACortar) || "ninguna porque no se ingreso una cadena"}`);
+}
+else{
+
+    alert("Se estaba esperando un numero");
+}
+
+
+</script>
+
+</body>
+</html>

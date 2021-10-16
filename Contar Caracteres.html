@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+  <script> 
+
+// función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+
+const contarCaracteres = cadena => {
+
+    if(typeof(cadena) == "string"){
+        return cadena.length;
+    }
+    else{
+        return undefined;
+    }
+} 
+
+let cadena = prompt("Ingrese una cadena de texto");
+let cantidadCaracteres = contarCaracteres(cadena);
+
+alert(`La cantidad de caracteres de la palabra ingresada es ${cantidadCaracteres || "Ninguna porque no se ingreso una cadena"}`);
+    
+  </script>
+
+</body>
+</html>
