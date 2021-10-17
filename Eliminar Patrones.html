@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // función que elimine cierto patrón de caracteres de un texto dado, 
+    // pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+
+    const removePattern = (string = "", pattern = "") =>
+
+        (typeof(string) != "string" || typeof(pattern) != "string")
+        ? "Invalid data type. only strings are accepted"
+        : (!string || !pattern)
+            ? "Invalid strings. No empty strings are accepted"
+            :`New String: ${string.replaceAll(pattern, "")}`;
+
+            
+    let string = prompt("Enter a string");
+    let pattern = prompt("Enter the pattern you want to remove from the string");
+
+    alert(removePattern(string, pattern));
+
+    </script>
+
+</body>
+</html>

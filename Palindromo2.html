@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// función que valide si una palabra o frase dada, es un palíndromo 
+// (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+const isPalindromo = (cadena = "") => 
+
+(!cadena || typeof(cadena) != "string")
+? false
+: (cadena.toLowerCase().split("").reverse().join("") === cadena.toLowerCase())
+    ? true
+    : false;
+
+let palabra = prompt("Ingresa una cadena para verificar si es o no palindromo");
+
+alert(isPalindromo(palabra)? "Es una expresion palidromo": "No es palindromo");
+
+    </script>
+
+</body>
+</html>

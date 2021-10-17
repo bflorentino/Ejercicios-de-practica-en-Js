@@ -11,21 +11,18 @@
     <script>
 
 //función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
-
 const repetirCadena = (cadena, repeticiones) =>{
 
-    if (typeof(cadena) == "string" && typeof(repeticiones) == "number"){
-        console.log(cadena.repeat(repeticiones));
-        return cadena.repeat(repeticiones);
-    }else{
-        return null;
-    }
+    if (typeof(cadena) == "string" && typeof(repeticiones) == "number" && cadena.length > 0 && repeticiones > 0)
+
+        return cadena.concat(" ").repeat(repeticiones);
+    
+    return null
 }
 
 let cadena = prompt("Ingresa una cadena de texto");
 let repeticiones = parseInt(prompt("Ingresa la cantidad de repeticiones que quieres"));
-
-alert(`${repetirCadena(cadena.concat(" "), repeticiones) || "Entradas no validas"}`);
+alert(`${repetirCadena(cadena, repeticiones) || "Entradas no validas"}`);
 
     </script>
 

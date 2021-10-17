@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// función para contar el número de veces que se aparece una palabra en un texto largo, 
+// pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+const verificarRepeticion = (cadena = "", repeticion = "") => {
+
+    if(!cadena) return "No se ingreso ninguna cadena";
+    if(!repeticion) return "No se ingreso ningun caracter para repeticion";
+    if(typeof(cadena) != "string" || typeof(repeticion) != "string") return "Ambos parametros ingresados deben ser cadenas de texto";
+
+    let contarPalabra = 0;
+    for(const palabra of cadena.split(" ")){
+        
+        if (palabra === repeticion) contarPalabra++;
+    }
+
+    return (contarPalabra > 0) 
+    ? `La palabra ${repeticion} se repite ${contarPalabra} veces` 
+    : `La palabra ${repeticion} no se encuentra en el texto`;
+}
+
+let expresion = prompt("Ingrese una cadena de texto");
+let repeticion = prompt("Ingrese la palabra a contar");
+
+alert(`${verificarRepeticion(expresion, repeticion)}`);
+
+</script>
+
+</body>
+</html>

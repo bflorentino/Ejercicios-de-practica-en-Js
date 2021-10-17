@@ -15,11 +15,9 @@
 
 const recortarCadena = (cadena, cantidad) => {
 
-    if(typeof(cadena) == "string" && typeof(cantidad) == "number"){
-        return cadena.slice(0, cantidad);
-    }else{
-        return undefined;
-    }
+    if(typeof(cadena) == "string" && typeof(cantidad) == "number") return cadena.slice(0, cantidad);
+    
+    return null
 } 
 
 let cadena = prompt("Ingrese una cadena de texto");
