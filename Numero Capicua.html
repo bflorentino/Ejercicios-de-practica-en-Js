@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), 
+// pe. miFuncion(2002) devolverá true.
+
+const isCapicua = (number = undefined) => 
+    (!number)
+    ? "No se ingreso un numero"
+    : String(number).split("").reverse().join("") === String(number)
+
+number = parseInt(prompt("Ingrese un numero para verificar si es capicua"));
+alert(`${isCapicua(number)}`);
+
+    </script>
+
+</body>
+</html>

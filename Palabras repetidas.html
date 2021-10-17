@@ -19,8 +19,8 @@ const verificarRepeticion = (cadena = "", repeticion = "") => {
     if(typeof(cadena) != "string" || typeof(repeticion) != "string") return "Ambos parametros ingresados deben ser cadenas de texto";
 
     let contarPalabra = 0;
+    
     for(const palabra of cadena.split(" ")){
-        
         if (palabra === repeticion) contarPalabra++;
     }
 
