@@ -1,0 +1,40 @@
+doctype <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// Convertir de farenheit a celsius
+const farenheitToCelsius = (numero = undefined) =>
+        (isNaN(numero)) 
+        ? "No se ingreso un numero"
+        : (numero-32) * (5/9);
+
+// Convertir de celsius a farenheit
+const celsiusToFarenheit = (numero = undefined) =>
+        (isNaN(numero))
+        ? "No se ingreso un numero"
+        : (numero * (9/5)+32);
+
+temperatura = parseFloat(prompt("Ingrese una temperatura"));
+unidadAConvertir = String(prompt("A que unidad desea convertirla? \nA.Celsius a Farenheit\nB.Farenheit a Celsius"));
+
+if(unidadAConvertir.toUpperCase() === "A"){
+    alert(`${celsiusToFarenheit(temperatura)}`);
+}
+else if(unidadAConvertir.toUpperCase() === "B"){
+    alert(`${farenheitToCelsius(temperatura)}`);
+}
+else{
+    alert("No selecciono un valor válido");
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+// Convertir de base decimal a binario
+const decimalABinario = (numero = undefined) =>{
+
+    if(isNaN(numero))
+        return "No se ingreso un numero";
+    
+    const digitosBinarios = [];
+
+    while(numero > 0){
+
+        let numeroAux = parseInt(numero / 2);
+        let digitoBinario = numero % 2;
+        numero = numeroAux;
+        digitosBinarios.push(digitoBinario);
+    }
+
+    return digitosBinarios.reverse().join("");
+} 
+
+
+// Convertir de base binaria a decimal
+const binarioADecimal = (binario = "") => {
+
+    const digitoBinario = binario.split("");
+
+    // Contamos las ocurrencias de 0 y 1 en el arreglo
+    let cantdigitosBinarios = digitoBinario.reduce((a, d) => (a[d] ? a[d]+=1 : a[d] = 1, a) , {})
+
+    // Validamos que la cantidad de 0 y 1 sea la misma a la cantidad de datos del arreglo
+    if((parseInt(cantdigitosBinarios['0']) + cantdigitosBinarios['1']) != digitoBinario.length)
+        return "Solo se pueden agregar 0 y 1 a un numero binario";
+
+    let resultadoAcumulado = 0;
+    let exponente = 0;
+
+    for(const value of digitoBinario.reverse()){
+
+        valorDecimal = value * Math.pow(2, exponente);
+        resultadoAcumulado += valorDecimal;
+        exponente++; 
+    }
+
+    return resultadoAcumulado;
+}
+
+seleccion = String(prompt("Seleccione que conversion desea \nA.Decimal a Binario\nB.Binario a Decimal"));
+
+if(seleccion.toUpperCase() === "A"){
+    numeroDecimal = parseInt(prompt("Ingrese un numero en base decimal"))
+    alert(`${decimalABinario(numeroDecimal)}`);
+}
+else if(seleccion.toUpperCase() === "B"){
+    numeroBinario = prompt("Ingresa un numero en forma binaria (0 y 1)");
+    alert(`${binarioADecimal(numeroBinario)}`);
+}
+else{
+    alert("Seleccion invalida");
+}
+
+    </script>
+
+</body>
+</html>
