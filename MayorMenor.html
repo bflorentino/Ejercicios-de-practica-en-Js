@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+// Devolver numero mayor y numero menor de un arreglo
+
+const getMayorYMenor = arreglo =>
+    [Math.max(...arreglo), Math.min(...arreglo)]
+
+const arreglo = [1, 2, 12, -12, 13, 14, 18, 21, 4, 7, -6];
+let resultado = getMayorYMenor(arreglo)
+
+alert(`El numero mayor es ${resultado[0]} \nEl numero menor es ${resultado[1]}`)
+
+</script>
+
+</body>
+</html>
